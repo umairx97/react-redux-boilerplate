@@ -1,4 +1,4 @@
-# react-redux-boilerplate
+# React-Redux-Boilerplate
 
 ## Components Used
 - Create-react-app 
