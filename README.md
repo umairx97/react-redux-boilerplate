@@ -1,2 +1,7 @@
 # react-redux-boilerplate
-This is a simple react + redux boilerplat to start creating your app 
+
+## Components Used
+- Create-react-app 
+- React-redux
+- Redux
+- Redux Devtools
