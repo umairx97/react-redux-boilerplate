@@ -1,9 +1,11 @@
-import * as actionTypes from '../actions/types';
+import * as actionTypes from "../actions/Types";
 
 export const dummy_reducer = (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.DUMMY:
-      return "this is a dummy reducer";
+    case actionTypes.ADD_USER:
+      return {
+        ...state
+      };
 
     default:
       return state;
