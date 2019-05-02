@@ -5,6 +5,7 @@ import { AsyncAddUser } from "./Store/middlewares/AsyncAddUser";
 
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <h1>This app is Bootstrapped with Redux and Thunk starter code</h1>
@@ -35,12 +36,14 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    title: state.dummy_reducer.title
+  };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    AsyncAddUser: () => dispatch(AsyncAddUser())
+    AsyncAddUser: data => dispatch(AsyncAddUser(data))
   };
 };
 export default connect(
