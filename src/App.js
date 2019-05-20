@@ -17,6 +17,7 @@ class App extends Component {
 
         <h3>
           <u>Structure:</u>
+          <button onClick = {this.props.AsyncAddUser}>Click me</button>
         </h3>
 
         <p>
@@ -46,6 +47,7 @@ const mapDispatchToProps = dispatch => {
     AsyncAddUser: data => dispatch(AsyncAddUser(data))
   };
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
