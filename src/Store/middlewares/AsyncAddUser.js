@@ -5,7 +5,7 @@ export const AsyncAddUser = (data) => {
   return dispatch => {
     // Do Async Work
     axios.get('https://express-heroku-dev.herokuapp.com/users').then(res => {
-      dispatch(add_user(res.data))
+      dispatch(add_user(res.data.data))
     }).catch(err => {
       console.log(err.message)
     })

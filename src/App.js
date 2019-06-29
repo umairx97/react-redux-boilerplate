@@ -38,7 +38,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    title: state.dummy_reducer.title
+    data: state.dummy_reducer.data
   };
 };
 
