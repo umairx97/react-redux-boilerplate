@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { AsyncAddUser } from "./Store/middlewares/AsyncAddUser";
+import AuthMiddleware from './Store/middlewares/authMiddleware';
 
 class App extends Component {
   render() {
@@ -15,21 +15,18 @@ class App extends Component {
         </h2>
         <h3>Redux Development tool is also connected.</h3>
 
-        <h3>
-          <u>Structure:</u>
-          <button onClick = {this.props.AsyncAddUser}>Click me</button>
-        </h3>
+        <h3><u>Structure:</u></h3>
 
         <p>
           <b>All the redux starter code is in /src/Store </b>
           <br />
           <b>CreateStore</b> is in src/Store/index.js <br />
-          <b>Action Types </b> are in src/Store/actions/Types.js <br />
-          <b>Dummy Action</b> are in src/Store/actions/add_user.js <br />
+          <b>Action Types </b> are in src/Store/actions/ActionTypes.js <br />
+          <b>Dummy Action</b> are in src/Store/actions/authActions <br />
           <b>Root Reducer</b> is in src/Store/reducers/index.js <br />
-          <b>Dummy Reducer</b> is in src/Store/reducers/dummy_reducer.js
+          <b>Dummy Reducer</b> is in src/Store/reducers/authReducer.js
           <br />
-          <b>Dummy Middleware</b> is in src/Store/middlewares/AsyncAddUser.js
+          <b>Dummy Middleware</b> is in src/Store/middlewares/authMiddleware.js
         </p>
       </div>
     );
@@ -38,13 +35,13 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    data: state.dummy_reducer.data
+    user: state.authReducer.user
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    AsyncAddUser: data => dispatch(AsyncAddUser(data))
+    authenticate: data => dispatch(AuthMiddleware.userLoginMiddleware(data))
   };
 };
 
